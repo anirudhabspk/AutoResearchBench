@@ -1,6 +1,6 @@
 # AutoAIResearch
 
-This repository contains the AutoAIResearch preview.
+This repository contains the AutoAIResearch blog.
 
-- Open `index.html` for the preview.
+- Open `index.html` to read the blog.
 - Open `detailed-task-report.html` for the full task report.
