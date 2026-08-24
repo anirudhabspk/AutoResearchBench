@@ -2,4 +2,5 @@
 
 This repository contains the AutoAIResearch preview.
 
-Open `index.html` to view the report.
+- Open `index.html` for the preview.
+- Open `detailed-task-report.html` for the full task report.
