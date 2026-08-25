@@ -60,12 +60,12 @@
     </section>
     <section class="section" id="results">
       <h2>Preliminary results</h2>
-      <p class="results-intro">AUARC means Area under the Auto Research Curve. It is the average score across 15 iterations, so models score higher when they find better solutions earlier. For hidden test AUARC, we use the hidden test score of the checkpoint selected by validation at each iteration.</p>
+      <p class="results-intro">AUARC is the normalized Area under the Auto Research Curve. We compute it by averaging the best score reached at each of the 15 iterations. Models score higher when they find better solutions earlier. For hidden test AUARC, we use the hidden test score of the checkpoint selected by validation at each iteration.</p>
       <div class="result-lead">
         <article class="result-stat"><span>Highest task-relative Elo</span><strong id="leader-score"></strong><p id="leader-name"></p></article>
         <article class="result-stat"><span>Spearman rank correlation</span><strong id="rho-score"></strong><p id="rho-range"></p></article>
       </div>
-      <p class="plot-note">Elo compares models within each task. The other plots show raw means across tasks. Lines show 95% intervals from resampling tasks.</p>
+      <p class="plot-note">Task relative Elo compares models using hidden test AUARC within each task. We combine these task level comparisons into one rating and set the middle model to 1000. Higher Elo means a model ranks above other models on more tasks. The other plots show raw means across tasks. Lines show 95% bootstrap intervals from repeatedly sampling the task set.</p>
       <div class="aggregate-grid" id="aggregate-plots"></div>
       <ul class="result-points result-notes" id="result-notes"></ul>
     </section>
