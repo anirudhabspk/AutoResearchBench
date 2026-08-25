@@ -16,7 +16,7 @@
 <body>
 <header class="topbar">
   <div class="brand">AutoResearchBench</div>
-  <nav class="toplinks" aria-label="Primary"><a href="#benchmark">Benchmark</a><a href="#results">Results</a><a href="#tasks">Tasks</a></nav>
+  <nav class="toplinks" aria-label="Primary"><a href="#benchmark">Benchmark</a><a href="#results">Preliminary results</a><a href="#tasks">Tasks</a></nav>
 </header>
 <section class="hero">
   <h1><span>AutoResearchBench</span></h1>
@@ -28,7 +28,8 @@
     <strong>Contents</strong>
     <a href="#benchmark">Overview</a>
     <a href="#measurement">Evaluation</a>
-    <a href="#results">Results</a>
+    <a href="#setup">Experimental setup</a>
+    <a href="#results">Preliminary results</a>
     <a href="#tasks">Prospective categories</a>
     <a href="#examples">Representative tasks</a>
     <a href="#release">Full release</a>
@@ -49,8 +50,15 @@
         <article class="measure"><span class="number">2</span><h3>Hidden test generalization.</h3><p>We rank systems using hidden test AUARC from checkpoints selected using validation alone. We also report final hidden test performance so major breakthroughs that happen late remain visible.</p></article>
       </div>
     </section>
+    <section class="section" id="setup">
+      <h2>Experimental setup</h2>
+      <div class="prose">
+        <p>Each task uses Terminus 2 and runs for 15 research iterations. At the start of each iteration, the model receives the current workspace and the validation scores from earlier iterations. Terminus 2 gives the model 20 to 40 agent turns, with up to 32,000 output tokens per turn. The model then submits one version for validation scoring, and its workspace carries into the next iteration. The model never sees hidden test scores.</p>
+        <p>The preliminary runs use high effort for Claude Opus 5, GPT-5.6-Sol, Qwen3.8-Max, and Kimi K3. Grok 4.6, GLM-5.3, Gemini 3.7 Flash, and Muse-Spark-1.2 use their provider defaults. For the final release, we will rerun every model at its highest supported effort. This preview reports one run for each model and task.</p>
+      </div>
+    </section>
     <section class="section" id="results">
-      <h2>Results</h2>
+      <h2>Preliminary results</h2>
       <p class="results-intro">AUARC means Area under the Auto Research Curve. It is the average score across 15 iterations, so models score higher when they find better solutions earlier. For hidden test AUARC, we use the hidden test score of the checkpoint selected by validation at each iteration.</p>
       <div class="result-lead">
         <article class="result-stat"><span>Highest task-relative Elo</span><strong id="leader-score"></strong><p id="leader-name"></p></article>
